@@ -1,0 +1,90 @@
+[
+    {
+        "id": 8100,
+        "icon": "perk-images/Styles/7200_Domination.png"
+    },
+    {
+        "id": 8112,
+        "icon": "perk-images/Styles/Domination/Electrocute/Electrocute.png"
+    },
+    {
+        "id": 8124,
+        "icon": "perk-images/Styles/Domination/Predator/predator.png"
+    },
+    {
+        "id": 8128,
+        "icon": "perk-images/Styles/Domination/darkharvest/darkharvest.png"
+    },
+    {
+        "id": 9928,
+        "icon": "perk-images/Styles/domination/hailofblades/hailofblades.png"
+    },
+    {
+        "id": 8300,
+        "icon": "perk-images/Styles/7203_Whimsy.png"
+    },
+    {
+        "id": 8351,
+        "icon": "perk-images/Styles/Inspiration/GlacialAugment/GlacialAugment.png"
+    },
+    {
+        "id": 8360,
+        "icon": "perk-images/Styles/inspiration/unsealedspellbook/unsealedspellbook.png"
+    },
+    {
+        "id": 8358,
+        "icon": "perk-images/Styles/inspiration/masterkey/masterkey.png"
+    },
+    {
+        "id": 8000,
+        "icon": "perk-images/Styles/7201_Precision.png"
+    },
+    {
+        "id": 8005,
+        "icon": "perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png"
+    },
+    {
+        "id": 8008,
+        "icon": "perk-images/Styles/precision/lethaltempo/lethaltempotemp.png"
+    },
+    {
+        "id": 8021,
+        "icon": "perk-images/Styles/Precision/FleetFootwork/FleetFootwork.png"
+    },
+    {
+        "id": 8010,
+        "icon": "perk-images/Styles/Precision/conqueror/conqueror.png"
+    },
+    {
+        "id": 8400,
+        "icon": "perk-images/Styles/7204_Resolve.png"
+    },
+    {
+        "id": 8437,
+        "icon": "perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png"
+    },
+    {
+        "id": 8439,
+        "icon": "perk-images/Styles/Resolve/veteranaftershock/veteranaftershock.png"
+    },
+    {
+        "id": 8465,
+        "icon": "perk-images/Styles/Resolve/guardian/guardian.png"
+    },
+    {
+        "id": 8200,
+        "icon": "perk-images/Styles/7202_Sorcery.png"
+    },
+    {
+        "id": 8214,
+        "icon": "perk-images/Styles/Sorcery/SummonAery/SummonAery.png"
+    },
+    {
+        "id": 8229,
+        "icon": "perk-images/Styles/Sorcery/arcanecomet/arcanecomet.png"
+    },
+    {
+        "id": 8230,
+        "icon": "perk-images/Styles/Sorcery/phaserush/phaserush.png"
+    }
+]

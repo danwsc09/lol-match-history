@@ -1,0 +1,58 @@
+[
+	{
+		"name": "SummonerBarrier",
+		"id": "21"
+	},
+	{
+		"name": "SummonerBoost",
+		"id": "1"
+	},
+	{
+		"name": "SummonerDot",
+		"id": "14"
+	},
+	{
+		"name": "SummonerExhaust",
+		"id": "3"
+	},
+	{
+		"name": "SummonerFlash",
+		"id": "4"
+	},
+	{
+		"name": "SummonerHaste",
+		"id": "6"
+	},
+	{
+		"name": "SummonerHeal",
+		"id": "7"
+	},
+	{
+		"name": "SummonerMana",
+		"id": "13"
+	},
+	{
+		"name": "SummonerPoroRecall",
+		"id": "30"
+	},
+	{
+		"name": "SummonerPoroThrow",
+		"id": "31"
+	},
+	{
+		"name": "SummonerSmite",
+		"id": "11"
+	},
+	{
+		"name": "SummonerSnowURFSnowball_Mark",
+		"id": "39"
+	},
+	{
+		"name": "SummonerSnowball",
+		"id": "32"
+	},
+	{
+		"name": "SummonerTeleport",
+		"id": "12"
+	}
+]

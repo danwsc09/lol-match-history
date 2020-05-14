@@ -1,0 +1,14 @@
+POST http://localhost:3001/search
+Content-Type: application/json
+
+{
+    "name": "dreamtoss"
+}
+
+###
+POST http://localhost:3001/test
+Content-Type: application/json
+
+{
+    "name": "9ioanhfdkljzjklchv"
+}
