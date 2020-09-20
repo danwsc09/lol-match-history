@@ -256,6 +256,10 @@
 		"id": "89"
 	},
 	{
+		"name": "Lillia",
+		"id": "876"
+	},
+	{
 		"name": "Lissandra",
 		"id": "127"
 	},
@@ -394,6 +398,10 @@
 	{
 		"name": "Ryze",
 		"id": "13"
+	},
+	{
+		"name": "Samira",
+		"id": "360"
 	},
 	{
 		"name": "Sejuani",
@@ -558,6 +566,10 @@
 	{
 		"name": "Yasuo",
 		"id": "157"
+	},
+	{
+		"name": "Yone",
+		"id": "777"
 	},
 	{
 		"name": "Yorick",

@@ -12,3 +12,11 @@ Content-Type: application/json
 {
     "name": "9ioanhfdkljzjklchv"
 }
+
+###
+POST https://lol-match-history-api.herokuapp.com/
+Content-Type: application/json
+
+{
+    "name": "brainzerg"
+}

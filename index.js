@@ -24,19 +24,22 @@ app.use(express.static('build'));
 
 app.set('port', PORT)
 
+// 1 API call to obtain accountId
 app.post('/search', async (request, res, next) => {
     
     try {
-        console.log(`Fetching account ID for, ${request.body.name} ...`)
+        console.log(`Fetching account ID for "${request.body.name}" from Riot API ...`)
         let response = await axios.get(config.URLSummonersId + request.body.name + `?api_key=${config.APIKEY}`)
         let accountId = response.data.accountId
 
-        console.log('Fetching all matches in the database...');
+        console.log('Fetching all matches in MongoDB...');
         let matchHistory = await Match.find({accId: accountId})
         console.log(`Done! Found ${matchHistory.length} matches.`);
         if (matchHistory.length === 0) {
             return res.json([]);
         }
+
+        // sort from most recent to oldest
         matchHistory.sort((a, b) => b.gameCreation - a.gameCreation)
         res.json( matchHistory.map(match => match.toJSON()) )
     } catch(exception) {
@@ -50,6 +53,9 @@ app.post('/search', async (request, res, next) => {
 })
 
 
+// 1 Call to obtain accountId
+// 1 Call to get match history
+// 1 Call for every match NOT in MongoDB
 app.post('/update', async (request, response, next) => {
 
     try {
@@ -57,11 +63,13 @@ app.post('/update', async (request, response, next) => {
         console.log('Fetching account ID for', request.body.name)
         let responseRiot = await axios.get(config.URLSummonersId + request.body.name + `?api_key=${config.APIKEY}`)
         let accountId = responseRiot.data.accountId
+        console.log(`Account id: ${accountId}`);
 
         // Send request to obtain full match history (past 100 games)
-        console.log('Fetching match history')
+        console.log('Fetching match history from Riot API')
         let response1 = await axios.get(config.URLMatchList + accountId + `?api_key=${config.APIKEY}`)
         let matches = response1.data.matches
+        console.log(matches)
         console.log(`There are ${matches.length} matches in from riot API`);
         
 
@@ -75,13 +83,18 @@ app.post('/update', async (request, response, next) => {
 
             if (checkMatches.length !== 0) continue; // later, change this to break
 
-            // Only allowed 20 API calls per second - wait 1 second every 20 calls to not exceed the limit
+            // Only allowed 20 API calls per second - wait 1 second every 18 calls to not exceed the limit
             if ( ((i + 1) % 18 === 0) ) {
                 console.log('1 second delay');
                 await config.timer(1000)
             }
 
             // Obtain queue type, season, and champion played for match
+            // Error with Riot API giving queueId of 1300 instead of 1200
+            // For Nexus Blitz game mode
+            if (match.queue === 1300) {
+                match.queue = 1200
+            }
             let queueTypeObj = config.queueJSON.find(queue => queue.queueId === match.queue);
             let seasonObj = config.seasonJSON.find(season => season.id == match.season);
             let championObj = config.championJSON.find(champion => match.champion == champion.id)
@@ -120,6 +133,11 @@ app.post('/update', async (request, response, next) => {
                     secondSummonerSpell = config.summonerSpellJSON.find(summonerSpell => playerFullInfo.spell2Id == summonerSpell.id).name;
                 }
                 let summonerSpells = [firstSummonerSpell, secondSummonerSpell];
+                
+                // console.log('===DEBUG===')
+                // console.log(playerFullInfo.stats)
+                // console.log('===DEBUG===')
+
                 let keystone = config.runesJSON.find(keystone => playerFullInfo.stats.perk0 == keystone.id);
                 let secondary = config.runesJSON.find(secondary => playerFullInfo.stats.perkSubStyle == secondary.id);
                 let eachAccountId = matchData.data.participantIdentities[i].player.accountId;
