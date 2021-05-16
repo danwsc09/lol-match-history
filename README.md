@@ -3,5 +3,5 @@
 - Live on: https://lol-match-history-api.herokuapp.com/
 - Can look up up to 100 matches on your first search.
 - Only supports NA server
-- Demo:
+- Demo: Type "brainzerg" and hit search.
 ![Demo](https://github.com/danwsc09/lol-match-history/blob/master/assets/demo.png)
